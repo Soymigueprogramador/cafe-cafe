@@ -11,7 +11,7 @@ function Header() {
 
   const navLinks = [
     { name: 'Home', id: 'home' },
-    { name: 'Menú', id: 'menu' },
+    { name: 'Menú', id: '#menu' },
     { name: 'Ubicación', id: 'ubicacion' },
     { name: 'Contact', id: 'contacto' },
   ];

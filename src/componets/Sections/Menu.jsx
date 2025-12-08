@@ -1,11 +1,11 @@
-import menuItem from '../../data/menuItems.js'
+import { Productos } from '../../data/menuItems.js'
 import MenuItemCard from '../Ui/MenuItemCard/MenuItemCard.jsx';
 
-const MenuSection = () => {
+const Menu = () => {
   return (
     <>
         {
-            menuItem.map(item => (
+            Productos.map(item => (
                 <MenuItemCard
                     key={
                         item.id
@@ -20,4 +20,4 @@ const MenuSection = () => {
   )
 }
 
-export default MenuSection
+export default Menu;

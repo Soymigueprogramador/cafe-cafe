@@ -25,4 +25,8 @@ export default Button
   * Le indicamos el tipo de Button
   * Le indicamos el nombre del Button
 */
+// Ejemplo de como se usa
+/*
+  <Button type="submit">Hola mundo</Button>
+*/
 // No es necesario usar style y css module

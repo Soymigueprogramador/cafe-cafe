@@ -1,12 +1,12 @@
 // Conjunto de objeto que mostrara los los productos
 
-const Productos = [
+export const Productos = [
     {
         id: 1,
         name: "Flat White Especial",
         description: "Doble shot de espresso con leche microespumada, suave y balanceado.",
         price: 3.50,
-        image: "/assets/images/flat-white.jpg", // Ruta a tu imagen
+        image: "/assets/images/Flat White Especial.jpg", // Ruta a tu imagen
         category: "Bebidas Calientes"
     },
     {
@@ -14,7 +14,7 @@ const Productos = [
         name: "Croissant Francés",
         description: "Masa hojaldrada, suave y mantecosa, recién horneado.",
         price: 2.75,
-        image: "/assets/images/croissant.jpg",
+        image: "/assets/images/Cafe_con_leche_y_cruasán.jpg",
         category: "Pastelería"
     },
     {
