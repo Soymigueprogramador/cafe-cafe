@@ -1,0 +1,32 @@
+Estructura de Carpetas Sugerida para el Proyecto React
+
+src/
+├── components/
+│   ├── layout/
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   ├── sections/
+│   │   ├── HeroSection.jsx
+│   │   ├── MenuSection.jsx
+│   │   ├── LocationSection.jsx
+│   │   ├── ContactSection.jsx
+│   ├── ui/  (para componentes pequeños y reutilizables como botones, tarjetas)
+│   │   ├── MenuItemCard.jsx
+│   │   ├── ContactForm.jsx
+│   │   ├── SocialLinks.jsx
+│   │   ├── Button.jsx
+│   ├── App.jsx  (Puedes moverlo a 'src/' si prefieres)
+├── data/
+│   ├── menuItems.js  (para almacenar los datos de tu menú)
+├── assets/
+│   ├── images/
+│   │   ├── hero-bg.jpg
+│   │   ├── flat-white.jpg
+│   │   ├── croissant.jpg
+│   │   ├── parfait.jpg
+│   │   ├── map-placeholder.jpg
+├── styles/
+│   ├── index.css  (o global.css para estilos globales)
+│   ├── components.css (o usar módulos CSS para cada componente)
+│   ├── variables.css (para colores, fuentes)
+├── main.jsx (o index.js)

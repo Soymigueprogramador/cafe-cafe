@@ -1,0 +1,96 @@
+/* src/components/ui/MenuItemCard.module.css */
+
+.card {
+  /* Fondo y Contenedor */
+  background-color: #ffffff; /* Fondo de la tarjeta: Blanco puro */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
+  padding: 1.5rem;
+  text-align: center;
+  /* El color de fondo del MenuSection es el que le da el color café */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* -------------------------------------- */
+/* IMAGEN CIRCULAR */
+/* -------------------------------------- */
+
+.imageContainer {
+  /* Contenedor que define el círculo */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Hace el círculo */
+  overflow: hidden; /* Recorta la imagen a la forma circular */
+  margin-bottom: 1rem;
+  border: 4px solid #f7f3ed; /* Borde interior claro alrededor del círculo */
+}
+
+.image {
+  /* La imagen debe llenar el contenedor circular */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen no se distorsione */
+}
+
+/* -------------------------------------- */
+/* TEXTO Y DETALLES */
+/* -------------------------------------- */
+
+.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #38221c; /* Café oscuro */
+  margin-bottom: 0.5rem;
+}
+
+.details {
+    /* Contiene la descripción y el precio en dos columnas */
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Una columna más ancha para la descripción, una pequeña para el precio */
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+    text-align: left;
+    align-items: end; /* Alinea la base de la descripción y el precio */
+}
+
+.description {
+  font-size: 0.85rem;
+  color: #7b5b47; /* Texto café medio para la descripción */
+  line-height: 1.4;
+  /* El texto de ejemplo en tu imagen está en dos líneas; usa `overflow: hidden` para simular eso si es necesario. */
+}
+
+.price {
+  font-weight: bold;
+  color: #38221c; /* Café oscuro */
+  font-size: 1rem;
+  text-align: right;
+  white-space: nowrap; /* Evita que el precio se rompa en dos líneas */
+}
+
+/* -------------------------------------- */
+/* RESPONSIVIDAD (La tarjeta ya es inherentemente responsiva) */
+/* -------------------------------------- */
+@media (max-width: 480px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .imageContainer {
+    width: 120px;
+    height: 120px;
+  }
+
+  .details {
+      grid-template-columns: 1fr; /* En pantallas muy pequeñas, la descripción y el precio van en filas */
+      text-align: center;
+  }
+
+  .price {
+      text-align: center;
+  }
+}
