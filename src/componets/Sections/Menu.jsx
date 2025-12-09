@@ -1,10 +1,13 @@
-import { Productos } from '../../data/menuItems.js'
+// src/components/Sections/Menu/Menu.jsx
+
+import { Productos } from '../../data/menuItems.js';
 import MenuItemCard from '../Ui/MenuItemCard/MenuItemCard.jsx';
 import Button from '../Ui/Button/Button.jsx';
+import style from './Menu.module.css';
 
 const Menu = () => {
   return (
-    <>
+    <div className={style.menuGrid}>
       {Productos.map(item => (
         <MenuItemCard
           key={item.id}
@@ -13,7 +16,7 @@ const Menu = () => {
           <Button type="submit">Consultar</Button>
         </MenuItemCard>
       ))}
-    </>
+    </div>
   );
 };
 
