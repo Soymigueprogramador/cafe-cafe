@@ -1,5 +1,4 @@
 // src/components/ui/MenuItemCard.jsx
-import React from 'react';
 import styles from './MenuItemCard.module.css';
 
 function MenuItemCard({ name, description, price, image, children }) {
