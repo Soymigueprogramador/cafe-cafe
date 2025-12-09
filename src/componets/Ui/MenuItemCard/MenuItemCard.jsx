@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './MenuItemCard.module.css';
 
-function MenuItemCard({ name, description, price, image }) {
+function MenuItemCard({ name, description, price, image, children }) {
   // Nota: `image` debe ser la ruta a tu imagen dentro de la carpeta `assets/images`
   // o una URL completa si usas imágenes externas.
 
@@ -24,7 +24,7 @@ function MenuItemCard({ name, description, price, image }) {
             <span className={styles.priceTag}>${price.toFixed(2)}</span>
         </p>
       </div>
-
+      { children }
     </div>
   );
 }
