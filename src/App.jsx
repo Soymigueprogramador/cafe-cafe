@@ -1,10 +1,10 @@
 import "./App.css";
-import Header from "./componets/layout/Header/Header.jsx";
-import Menu from "./componets/Sections/menu.jsx";
-import HeroSection from "./componets/Sections/HeroSection/HeroSection.jsx";
-import LocationSection from './componets/Sections/LocationSection/LocationSection.jsx';
-import Contacto from './componets/Sections/Contacto/Contacto.jsx'
-import Footer from "./componets/layout/Footer/Footer.jsx";
+import Header from "./components/layout/Header/Header.jsx";
+import Menu from "./components/Sections/menu.jsx";
+import HeroSection from "./components/Sections/HeroSection/HeroSection.jsx";
+import LocationSection from './components/Sections/LocationSection/LocationSection.jsx';
+import Contacto from './components/Sections/Contacto/Contacto.jsx'
+import Footer from "./components/layout/Footer/Footer.jsx";
 
 const App = () => {
   return (
