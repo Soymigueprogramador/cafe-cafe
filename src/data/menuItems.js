@@ -1,4 +1,4 @@
-// Conjunto de objeto que mostrara los los productos
+// Conjunto de objeto que mostrará los productos
 
 export const Productos = [
   {
@@ -6,7 +6,7 @@ export const Productos = [
     name: "Flat White Especial",
     description: "Doble shot de espresso con leche microespumada, suave y balanceado.",
     price: 3.50,
-    image: "/public/assets/image/Flat-White-Especial.jpg",
+    image: "/src/assets/image/Flat-White-Especial.jpg",
     category: "Bebidas Calientes"
   },
   {
@@ -14,7 +14,7 @@ export const Productos = [
     name: "Croissant Francés",
     description: "Masa hojaldrada, suave y mantecosa, recién horneado.",
     price: 2.75,
-    image: "/public/assets/image/Cafe-con-leche-y-croissant.jpg",
+    image: "/src/assets/image/Cafe-con-leche-y-croissant.jpg",
     category: "Pastelería"
   },
   {
@@ -22,7 +22,7 @@ export const Productos = [
     name: "Parfait de Granola",
     description: "Yogur griego, miel, granola casera, y bayas frescas.",
     price: 5.90,
-    image: "/public/assets/image/parfait.jpg",
+    image: "/src/assets/image/parfait.jpg",
     category: "Desayunos"
   },
   {
@@ -30,7 +30,7 @@ export const Productos = [
     name: "Latte de Vainilla",
     description: "Espresso con leche vaporizada y vainilla.",
     price: 4.20,
-    image: "/public/assets/image/latte-vainilla.jpg",
+    image: "/src/assets/image/latte-vainilla.jpg",
     category: "Bebidas Calientes"
   }
 ];

@@ -10,10 +10,10 @@ function Header() {
   };
 
   const navLinks = [
-    { name: 'Home', id: 'home' },
-    { name: 'Menú', id: '#menu' },
-    { name: 'Ubicación', id: 'ubicacion' },
-    { name: 'Contact', id: 'contacto' },
+    { name: 'Home', id: 'Home' },
+    { name: 'Menú', id: 'Menu' },
+    { name: 'Ubicación', id: 'Ubicacion' },
+    { name: 'Contact', id: 'Contacto' },
   ];
 
   return (

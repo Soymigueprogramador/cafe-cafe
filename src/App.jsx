@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./components/layout/Header/Header.jsx";
-import Menu from './components/Sections/Menu.jsx'
+import Menu from './components/Sections/Menu/Menu.jsx'
 import HeroSection from "./components/Sections/HeroSection/HeroSection.jsx";
 import LocationSection from './components/Sections/LocationSection/LocationSection.jsx';
 import Contacto from './components/Sections/Contacto/Contacto.jsx'
@@ -12,7 +12,7 @@ const App = () => {
       <Header /> {/* Barra de navegacion */}
 
       {/* Seccion de inicio */}
-      <section id="inicio">
+      <section id="Home">
         <HeroSection />
       </section>
 
@@ -22,12 +22,12 @@ const App = () => {
       </section>
 
       {/* Seccion de unicacion */}
-      <section id="ubicacion">
+      <section id="Ubicacion">
         <LocationSection />
       </section>
 
       {/* Seccion de contacto */}
-      <section id="contacto">
+      <section id="Contacto">
         <Contacto/>
       </section>
 
