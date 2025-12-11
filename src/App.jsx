@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./components/layout/Header/Header.jsx";
-import Menu from './components/Sections/Menu/Menu.jsx'
+import MenuItems from './components/Sections/Menu/Menu.jsx'
 import HeroSection from "./components/Sections/HeroSection/HeroSection.jsx";
 import LocationSection from './components/Sections/LocationSection/LocationSection.jsx';
 import Contacto from './components/Sections/Contacto/Contacto.jsx'
@@ -18,7 +18,7 @@ const App = () => {
 
       {/* Seccion de menu */}
       <section id="Menu">
-        <Menu />
+        <MenuItems />
       </section>
 
       {/* Seccion de unicacion */}
