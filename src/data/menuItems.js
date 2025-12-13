@@ -1,4 +1,4 @@
-// Conjunto de objeto que mostrará los productos
+// Conjunto de objetos que mostrará los productos
 
 const MenuItems = [
   {
@@ -6,7 +6,7 @@ const MenuItems = [
     name: "Flat White Especial",
     description: "Doble shot de espresso con leche microespumada, suave y balanceado.",
     price: 3.50,
-    image: "/assets/image/Flat-White-Especial.jpg",
+    image: "/public/assets/image/Flat-White-Especial.jpg",
     category: "Bebidas Calientes"
   },
   {
@@ -14,15 +14,15 @@ const MenuItems = [
     name: "Croissant Francés",
     description: "Masa hojaldrada, suave y mantecosa, recién horneado.",
     price: 2.75,
-    image: "/assets/image/Cafe-con-leche-y-croissant.jpg",
+    image: "/public/assets/image/Cafe-con-leche-y-croissant.jpg",
     category: "Pastelería"
   },
   {
     id: 3,
     name: "Parfait de Granola",
-    description: "Yogur griego, miel, granola casera, y bayas frescas.",
+    description: "Yogur griego, miel, granola casera y bayas frescas.",
     price: 5.90,
-    image: "/assets/image/parfait.jpg",
+    image: "/public/assets/image/parfait.jpg",
     category: "Desayunos"
   },
   {
@@ -30,9 +30,9 @@ const MenuItems = [
     name: "Latte de Vainilla",
     description: "Espresso con leche vaporizada y vainilla.",
     price: 4.20,
-    image: "/assets/image/latte-vainilla.jpg",
+    image: "/public/assets/image/latte-vainilla.jpg",
     category: "Bebidas Calientes"
   }
 ];
 
-export default MenuItems
+export default MenuItems;
