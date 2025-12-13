@@ -7,7 +7,7 @@ function LocationSection() {
     const locationData = {
         address: 'Calle de la Felicidad, 123 - Ciudad Sol',
         hours: 'Lun-Dom: 7am - 8pm',
-        mapImageUrl: '/assets/images/map-placeholder.jpg',
+        mapImageUrl: '/assets/image/map-placeholder.jpg',
         // En un proyecto real, esto sería un iframe de Google Maps
     };
 

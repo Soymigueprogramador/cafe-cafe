@@ -4,7 +4,7 @@ import styles from './SocialLinks.module.css';
 
 // Array de datos para las redes sociales
 const socialMedia = [
-  { name: 'Instagram', icon: '', url: 'https://instagram.com/cafeaura' },
+  { name: 'Instagram', icon: '', url: 'https://instagram.com/cafeaura' },
   { name: 'Facebook', icon: '', url: 'https://facebook.com/cafeaura' },
   { name: 'Twitter', icon: '', url: 'https://twitter.com/cafeaura' },
 ];
