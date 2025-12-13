@@ -1,6 +1,6 @@
 // Conjunto de objetos que mostrará los productos
 
-const MenuItems = [
+export const Productos = [
   {
     id: 1,
     name: "Flat White Especial",
@@ -34,5 +34,3 @@ const MenuItems = [
     category: "Bebidas Calientes"
   }
 ];
-
-export default MenuItems;
