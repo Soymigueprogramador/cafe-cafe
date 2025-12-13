@@ -1,6 +1,6 @@
 // src/components/Sections/Menu/Menu.jsx
 
-import MenuItems from '../../../data/MenuItems.js';
+import MenuItems from '../../../data/MenuItems';
 import MenuItemCard from '../../Ui/MenuItemCard/MenuItemCard.jsx';
 import Button from '../../Ui/Button/Button.jsx';
 import style from './Menu.module.css';
