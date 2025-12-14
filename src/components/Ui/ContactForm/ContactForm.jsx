@@ -1,22 +1,23 @@
 // src/components/ui/ContactForm.jsx
-import React, { useState } from 'react';
-import styles from './ContactForm.module.css';
-import Button from '../Button/Button.jsx'; // Importamos el componente Button que ya creamos
+import React, { useState } from "react";
+import styles from "./ContactForm.module.css";
+import Button from "../Button/Button.jsx"; // Importamos el componente Button que ya creamos
 
 function ContactForm() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    number: "",
+    message: "",
   });
-  const [status, setStatus] = useState(''); // 'idle', 'sending', 'success', 'error'
+  const [status, setStatus] = useState(""); // 'idle', 'sending', 'success', 'error'
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  {
+    /* const handleSubmit = (e) => {
     e.preventDefault();
     setStatus('sending');
 
@@ -40,6 +41,39 @@ function ContactForm() {
       setTimeout(() => setStatus('idle'), 5000);
 
     }, 1500);
+  }; */
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!formData.name || !formData.number || !formData.message) {
+      alert("Por favor, rellena todos los campos.");
+      return;
+    }
+
+    const phoneNumber = "5491126644514";
+
+    const message = `
+Hola, quiero hacer una consulta desde la web.
+
+👤 Nombre: ${formData.name}
+📞 Teléfono: ${formData.number}
+📝 Mensaje:
+${formData.message}
+  `;
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+
+    window.open(whatsappURL, "_blank");
+
+    setFormData({
+      name: "",
+      number: "",
+      message: "",
+    });
   };
 
   return (
@@ -49,7 +83,6 @@ function ContactForm() {
         Ej: <form onSubmit={handleSubmit} className={styles.form} action="YOUR_FORMSPREE_URL" method="POST">
       */}
       <form onSubmit={handleSubmit} className={styles.form}>
-
         {/* Input: Nombre */}
         <input
           type="text"
@@ -63,10 +96,10 @@ function ContactForm() {
 
         {/* Input: Email */}
         <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
+          type="number"
+          name="number"
+          placeholder="Numero de telefono"
+          value={formData.number}
           onChange={handleChange}
           required
           className={styles.input}
@@ -84,20 +117,17 @@ function ContactForm() {
         ></textarea>
 
         {/* Botón de Enviar */}
-        <Button
-            type="submit"
-            disabled={status === 'sending'}
-        >
-            {status === 'sending' ? 'Enviando...' : 'Enviar Mensaje'}
+        <Button type="submit" disabled={status === "sending"}>
+          {status === "sending" ? "Enviando..." : "Enviar Mensaje"}
         </Button>
 
         {/* Mensajes de Estado */}
-        {status === 'success' && (
+        {status === "success" && (
           <p className={styles.successMessage}>
             ¡Mensaje enviado con éxito! Gracias por contactarnos.
           </p>
         )}
-        {status === 'error' && (
+        {status === "error" && (
           <p className={styles.errorMessage}>
             Ocurrió un error. Inténtalo de nuevo más tarde.
           </p>
