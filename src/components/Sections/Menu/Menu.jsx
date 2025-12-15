@@ -1,6 +1,6 @@
 import { Productos } from "../../../data/menuItems";
 import MenuItemCard from "../../Ui/MenuItemCard/MenuItemCard.jsx";
-import Button from "../../ui/Button/Button.jsx";
+import Button from "../../Ui/Button/Button.jsx";
 import style from "./Menu.module.css";
 
 const Menu = ({ onSelectProduct, selectedProduct }) => {
