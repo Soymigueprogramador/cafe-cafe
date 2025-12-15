@@ -1,5 +1,5 @@
 import { Productos } from "../../../data/menuItems";
-import MenuItemCard from "../../ui/MenuItemCard/MenuItemCard.jsx";
+import MenuItemCard from "../../Ui/MenuItemCard/MenuItemCard.jsx";
 import Button from "../../ui/Button/Button.jsx";
 import style from "./Menu.module.css";
 
