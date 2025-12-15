@@ -24,7 +24,7 @@ export default Contacto;* */}
 
 import { useState } from "react";
 import Menu from "../Menu/Menu";
-import ContactForm from "../../ui/ContactForm/ContactForm";
+import ContactForm from "../../Ui/ContactForm/ContactForm.jsx";
 
 const Contacto = ({ showMenu = true, showForm = true }) => {
   const [selectedProduct, setSelectedProduct] = useState(null);

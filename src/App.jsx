@@ -4,7 +4,7 @@ import Header from "./components/layout/Header/Header.jsx";
 import HeroSection from "./components/Sections/HeroSection/HeroSection.jsx";
 import LocationSection from "./components/Sections/LocationSection/LocationSection.jsx";
 import Menu from "./components/Sections/Menu/Menu.jsx";
-import ContactForm from "./components/ui/ContactForm/ContactForm.jsx";
+import ContactForm from "./components/Ui/ContactForm/ContactForm.jsx";
 import Footer from "./components/layout/Footer/Footer.jsx";
 
 const App = () => {
