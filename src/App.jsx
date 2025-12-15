@@ -1,37 +1,43 @@
 import "./App.css";
+import { useState } from "react";
 import Header from "./components/layout/Header/Header.jsx";
-import MenuItems from './components/Sections/Menu/Menu.jsx'
 import HeroSection from "./components/Sections/HeroSection/HeroSection.jsx";
-import LocationSection from './components/Sections/LocationSection/LocationSection.jsx';
-import Contacto from './components/Sections/Contacto/Contacto.jsx'
+import LocationSection from "./components/Sections/LocationSection/LocationSection.jsx";
+import Menu from "./components/Sections/Menu/Menu.jsx";
+import ContactForm from "./components/ui/ContactForm/ContactForm.jsx";
 import Footer from "./components/layout/Footer/Footer.jsx";
 
 const App = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
   return (
     <>
-      <Header /> {/* Barra de navegacion */}
+      <Header />
 
-      {/* Seccion de inicio */}
+      {/* HOME */}
       <section id="Home">
         <HeroSection />
       </section>
 
-      {/* Seccion de menu */}
+      {/* MENU */}
       <section id="Menu">
-        <MenuItems />
+        <Menu
+          onSelectProduct={setSelectedProduct}
+          selectedProduct={selectedProduct}
+        />
       </section>
 
-      {/* Seccion de unicacion */}
+      {/* UBICACION */}
       <section id="Ubicacion">
         <LocationSection />
       </section>
 
-      {/* Seccion de contacto */}
+      {/* CONTACTO (solo formulario) */}
       <section id="Contacto">
-        <Contacto/>
+        <ContactForm selectedProduct={selectedProduct} />
       </section>
 
-      <Footer /> {/* Footer */}
+      <Footer />
     </>
   );
 };

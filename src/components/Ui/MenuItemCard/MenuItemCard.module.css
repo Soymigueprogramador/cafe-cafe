@@ -12,6 +12,18 @@
   align-items: center;
 
   width: 100%; /* El ancho lo maneja el grid del contenedor */
+
+  transition: all 0.25s ease;
+}
+
+/* ----------------------------- */
+/* TARJETA SELECCIONADA */
+/* ----------------------------- */
+
+.selected {
+  border: 2px solid #c59d5f;
+  box-shadow: 0 0 15px rgba(197, 157, 95, 0.6);
+  transform: scale(1.02);
 }
 
 /* ----------------------------- */
@@ -46,7 +58,7 @@
 
 .details {
   display: flex;
-  flex-direction: column; /* descripción arriba, precio debajo */
+  flex-direction: column;
   width: 100%;
   margin-top: 1rem;
   text-align: center;
@@ -63,7 +75,7 @@
   font-weight: bold;
   color: #38221c;
   font-size: 1rem;
-  margin-bottom: 1rem; /* espacio para el botón */
+  margin-bottom: 1rem;
 }
 
 /* ----------------------------- */
