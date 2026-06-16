@@ -1,21 +1,5 @@
-// src/components/layout/Footer.jsx
-import styles from './Footer.module.css';
-
-// Componente SocialLinks simple (para este ejemplo)
-const SocialLinks = () => (
-    <div className={styles.social}>
-        {/* Aquí usarías íconos reales, ej: <FaInstagram /> */}
-        <a href="https://instagram.com/cafeaura" target="_blank" rel="noopener noreferrer">
-            <span className={styles.icon}></span> {/* Instagram */}
-        </a>
-        <a href="https://facebook.com/cafeaura" target="_blank" rel="noopener noreferrer">
-            <span className={styles.icon}></span> {/* Facebook */}
-        </a>
-        <a href="https://twitter.com/cafeaura" target="_blank" rel="noopener noreferrer">
-            <span className={styles.icon}></span> {/* Twitter / X */}
-        </a>
-    </div>
-);
+import SocialLinks from "../../Ui/SocialLinks/SocialLinks.jsx";
+import styles from "./Footer.module.css";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -23,20 +7,25 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.content}>
-        {/* Enlaces Sociales (Opcional, si no están en la sección de Contacto) */}
-        <SocialLinks />
+        <div>
+          <a href="#Home" className={styles.brand}>
+            Cafe Cafe
+          </a>
+          <p>Especialidad, pasteleria y pausas bien servidas.</p>
+        </div>
 
-        {/* Texto de Copyright */}
-        <p className={styles.copyright}>
-          &copy; {currentYear} Café Café. Todos los derechos reservados.
-        </p>
-
-        {/* Enlaces de políticas (opcional, pero buena práctica) */}
-        <nav className={styles.links}>
-            <a href="#privacy">Política de Privacidad</a>
-            <a href="#terms">Términos y Condiciones</a>
+        <nav className={styles.links} aria-label="Enlaces del sitio">
+          <a href="#Menu">Menu</a>
+          <a href="#Ubicacion">Ubicacion</a>
+          <a href="#Contacto">Contacto</a>
         </nav>
+
+        <SocialLinks />
       </div>
+
+      <p className={styles.copyright}>
+        &copy; {currentYear} Cafe Cafe. Todos los derechos reservados.
+      </p>
     </footer>
   );
 }

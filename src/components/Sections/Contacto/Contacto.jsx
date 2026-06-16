@@ -1,37 +1,18 @@
-{/* import { useState } from "react";
-import Menu from "../../Sections/Menu/Menu.jsx";
-import ContactForm from "../../Ui/ContactForm/ContactForm.jsx";
-
-const Contacto = () => {
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
-  return (
-    <>
-      <Menu onSelectProduct={setSelectedProduct} />
-      <ContactForm selectedProduct={selectedProduct} />
-    </>
-  );
-};
-
-export default Contacto;* */}
-
-
-
-
-
-
-
-
 import { useState } from "react";
-import Menu from "../Menu/Menu";
 import ContactForm from "../../Ui/ContactForm/ContactForm.jsx";
+import Menu from "../Menu/Menu";
 
 const Contacto = ({ showMenu = true, showForm = true }) => {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   return (
     <>
-      {showMenu && <Menu onSelectProduct={setSelectedProduct} />}
+      {showMenu && (
+        <Menu
+          onSelectProduct={setSelectedProduct}
+          selectedProduct={selectedProduct}
+        />
+      )}
       {showForm && <ContactForm selectedProduct={selectedProduct} />}
     </>
   );

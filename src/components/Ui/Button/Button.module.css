@@ -1,40 +1,46 @@
-/* src/components/ui/Button.module.css */
-
 .button {
-  /* Diseño base */
-  background-color: #f7f3ed; /* Color crema/claro */
-  color: #38221c; /* Texto color café oscuro */
-  border: 2px solid #38221c; /* Borde oscuro */
-  border-radius: 25px; /* Esquinas redondeadas (Pill shape) */
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid transparent;
+  border-radius: 8px;
   cursor: pointer;
-  margin-bottom: 15px;
-
-  /* Transiciones suaves */
-  transition: all 0.3s ease;
-
-  /* Asegura que el texto no se seleccione fácilmente */
+  font-weight: 800;
+  padding: 0.78rem 1rem;
+  transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease,
+    border-color 0.18s ease;
   user-select: none;
 }
 
-/* Efecto al pasar el ratón (Hover) */
-.button:hover {
-  background-color: #38221c; /* Invierte los colores */
-  color: #f7f3ed; /* Texto claro */
-  border-color: #38221c;
+.primary {
+  background: var(--coffee);
+  color: var(--cream);
 }
 
-/* Estado al presionar el botón */
-.button:active {
-  transform: scale(0.98); /* Pequeño efecto de "presión" */
+.secondary {
+  background: var(--cream);
+  color: var(--coffee);
+  border-color: rgba(90, 55, 41, 0.28);
 }
 
-/* Estado deshabilitado (para formularios, etc.) */
+.button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.primary:hover:not(:disabled) {
+  background: #42271e;
+}
+
+.secondary:hover:not(:disabled) {
+  background: #f2e6d8;
+  border-color: rgba(90, 55, 41, 0.45);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
 .button:disabled {
-  background-color: #ccc;
-  color: #666;
-  border-color: #666;
+  background: #d8d0c7;
+  color: #7d746c;
   cursor: not-allowed;
 }

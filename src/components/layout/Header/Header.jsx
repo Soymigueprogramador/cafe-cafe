@@ -1,36 +1,31 @@
-// src/components/layout/Header.jsx
-import { useState } from 'react';
-import styles from './Header.module.css';
+import { useState } from "react";
+import styles from "./Header.module.css";
+
+const navLinks = [
+  { name: "Inicio", id: "Home" },
+  { name: "Menu", id: "Menu" },
+  { name: "Ubicacion", id: "Ubicacion" },
+  { name: "Contacto", id: "Contacto" },
+];
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const navLinks = [
-    { name: 'Home', id: 'Home' },
-    { name: 'Menú', id: 'Menu' },
-    { name: 'Ubicación', id: 'Ubicacion' },
-    { name: 'Contact', id: 'Contacto' },
-  ];
-
   return (
     <header className={styles.header}>
-      {/* 1. Logo */}
-      <div className={styles.logo}>
-        {/* Aquí iría el ícono de taza */}
-        <span>☕</span>
-        <h1>Café Café</h1>
-      </div>
+      <a href="#Home" className={styles.logo} onClick={() => setIsOpen(false)}>
+        <span className={styles.mark} aria-hidden="true">CC</span>
+        <span>Cafe Cafe</span>
+      </a>
 
-      {/* 2. Menú de Navegación (visible en desktop) */}
-      <nav className={`${styles.nav} ${isOpen ? styles.open : ''}`}>
+      <nav
+        id="main-navigation"
+        className={`${styles.nav} ${isOpen ? styles.open : ""}`}
+        aria-label="Navegacion principal"
+      >
         <ul>
           {navLinks.map((link) => (
             <li key={link.id}>
-              {/* Usamos anclas (#) para el smooth scroll a las secciones */}
               <a href={`#${link.id}`} onClick={() => setIsOpen(false)}>
                 {link.name}
               </a>
@@ -39,21 +34,21 @@ function Header() {
         </ul>
       </nav>
 
-      {/* 3. Ícono de Búsqueda y Botón de Menú Móvil */}
-      <div className={styles.actions}>
-        {/* Ícono de Búsqueda (Magnifying Glass) */}
-        <span className={styles.searchIcon}>🔍</span>
+      <a className={styles.cta} href="#Contacto">
+        Reservar
+      </a>
 
-        {/* Botón de Hamburguesa (visible solo en móvil) */}
-        <button
-          className={styles.menuToggle}
-          onClick={toggleMenu}
-          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
-        >
-          {/* Cambia el ícono basado en el estado */}
-          {isOpen ? '✖' : '☰'}
-        </button>
-      </div>
+      <button
+        className={styles.menuToggle}
+        onClick={() => setIsOpen((current) => !current)}
+        aria-expanded={isOpen}
+        aria-controls="main-navigation"
+        aria-label={isOpen ? "Cerrar menu" : "Abrir menu"}
+        type="button"
+      >
+        <span />
+        <span />
+      </button>
     </header>
   );
 }

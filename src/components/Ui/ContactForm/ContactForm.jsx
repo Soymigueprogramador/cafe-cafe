@@ -1,127 +1,129 @@
-// src/components/ui/ContactForm.jsx
-import React, { useState } from "react";
+import { useState } from "react";
+import Button from "../Button/Button.jsx";
 import styles from "./ContactForm.module.css";
-import Button from "../Button/Button.jsx"; // Importamos el componente Button que ya creamos
+
+const initialFormData = {
+  name: "",
+  number: "",
+  message: "",
+};
 
 function ContactForm({ selectedProduct }) {
-  const [formData, setFormData] = useState({
-    name: "",
-    number: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState(initialFormData);
+  const [status, setStatus] = useState("");
 
-  const [status, setStatus] = useState(""); // 'idle', 'sending', 'success', 'error'
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (event) => {
+    const { name, value } = event.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-    if (!formData.name || !formData.number || !formData.message) {
-      alert("Por favor, rellena todos los campos.");
+    if (!formData.name.trim() || !formData.number.trim() || !formData.message.trim()) {
+      setStatus("error");
       return;
     }
 
+    setStatus("sending");
+
     const phoneNumber = "5491126644514";
+    const productText = selectedProduct
+      ? `${selectedProduct.name} - $${selectedProduct.price.toFixed(2)}`
+      : "Consulta general";
 
-    const message = `
-Hola, quiero hacer una consulta desde la web.
+    const message = [
+      "Hola, quiero hacer una consulta desde la web.",
+      "",
+      `Nombre: ${formData.name}`,
+      `Telefono: ${formData.number}`,
+      `Producto: ${productText}`,
+      "",
+      `Mensaje: ${formData.message}`,
+    ].join("\n");
 
-👤 Nombre: ${formData.name}
-📞 Teléfono: ${formData.number}
+    window.open(
+      `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
 
-📦 Producto consultado:
-${
-  selectedProduct
-    ? `- ${selectedProduct.name}
-- ${selectedProduct.description}
-- Precio: $${selectedProduct.price}`
-    : "No se seleccionó ningún producto"
-}
-
-📝 Mensaje:
-${formData.message}
-`;
-
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      message
-    )}`;
-
-    window.open(whatsappURL, "_blank");
-
-    setFormData({
-      name: "",
-      number: "",
-      message: "",
-    });
+    setFormData(initialFormData);
+    setStatus("success");
   };
 
   return (
     <div className={styles.formContainer}>
-      {selectedProduct && (
+      {selectedProduct ? (
         <div className={styles.selectedProduct}>
-          <strong>Producto seleccionado:</strong>
-          <p>
-            {selectedProduct.name} — ${selectedProduct.price}
-          </p>
+          <span>Producto seleccionado</span>
+          <strong>
+            {selectedProduct.name} - ${selectedProduct.price.toFixed(2)}
+          </strong>
+        </div>
+      ) : (
+        <div className={styles.selectedProduct}>
+          <span>Consulta general</span>
+          <strong>Contanos que necesitas</strong>
         </div>
       )}
 
       <form onSubmit={handleSubmit} className={styles.form}>
-        {/* Input: Nombre */}
-        <input
-          type="text"
-          name="name"
-          placeholder="Nombre"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className={styles.input}
-        />
+        <label>
+          Nombre
+          <input
+            type="text"
+            name="name"
+            placeholder="Tu nombre"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className={styles.input}
+          />
+        </label>
 
-        {/* Input: Teléfono */}
-        <input
-          type="number"
-          name="number"
-          placeholder="Número de teléfono"
-          value={formData.number}
-          onChange={handleChange}
-          required
-          className={styles.input}
-        />
+        <label>
+          Telefono
+          <input
+            type="tel"
+            name="number"
+            placeholder="11 2345 6789"
+            value={formData.number}
+            onChange={handleChange}
+            required
+            className={styles.input}
+          />
+        </label>
 
-        {/* Textarea: Mensaje */}
-        <textarea
-          name="message"
-          placeholder="Tu mensaje..."
-          value={formData.message}
-          onChange={handleChange}
-          required
-          rows="4"
-          className={styles.textarea}
-        />
+        <label>
+          Mensaje
+          <textarea
+            name="message"
+            placeholder="Hola, queria consultar por..."
+            value={formData.message}
+            onChange={handleChange}
+            required
+            rows="5"
+            className={styles.textarea}
+          />
+        </label>
 
-        {/* Botón de Enviar */}
         <Button type="submit" disabled={status === "sending"}>
-          {status === "sending" ? "Enviando..." : "Enviar Mensaje"}
+          {status === "sending" ? "Abriendo WhatsApp..." : "Enviar por WhatsApp"}
         </Button>
 
-        {/* Mensajes de Estado */}
         {status === "success" && (
           <p className={styles.successMessage}>
-            ¡Mensaje enviado con éxito! Gracias por contactarnos.
+            Listo. Se abrio WhatsApp con tu mensaje preparado.
           </p>
         )}
 
         {status === "error" && (
           <p className={styles.errorMessage}>
-            Ocurrió un error. Inténtalo de nuevo más tarde.
+            Completa todos los campos antes de enviar.
           </p>
         )}
       </form>

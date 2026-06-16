@@ -1,52 +1,84 @@
-/* src/components/ui/ContactForm.module.css */
-
 .formContainer {
-  /* Margen o padding si se usa dentro de una cuadrícula */
   width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.selectedProduct {
+  display: grid;
+  gap: 0.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 8px;
+  background: #f6efe6;
+  padding: 1rem;
+}
+
+.selectedProduct span {
+  color: var(--green);
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.selectedProduct strong {
+  color: var(--ink);
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* Espacio entre los elementos del formulario */
+  gap: 1rem;
 }
 
-/* Estilos de los inputs (Nombre, Email) y Textarea */
-.input, .textarea {
+.form label {
+  display: grid;
+  gap: 0.4rem;
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.input,
+.textarea {
   width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(45, 33, 27, 0.18);
   border-radius: 8px;
+  background: #fffdf9;
+  color: var(--ink);
   font-size: 1rem;
-  font-family: inherit; /* Usa la fuente global del proyecto */
-  box-sizing: border-box;
-  transition: border-color 0.3s;
+  padding: 0.85rem 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.input:focus, .textarea:focus {
-  border-color: #7b5b47; /* Borde color café al enfocarse */
+.input:focus,
+.textarea:focus {
+  border-color: rgba(184, 120, 61, 0.7);
+  box-shadow: 0 0 0 3px rgba(184, 120, 61, 0.14);
   outline: none;
 }
 
 .textarea {
-  resize: vertical; /* Permite redimensionar solo verticalmente */
+  min-height: 140px;
+  resize: vertical;
 }
 
-/* Estilos para los mensajes de estado */
+.successMessage,
+.errorMessage {
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 0.85rem;
+}
+
 .successMessage {
-  color: #157347; /* Color verde */
-  background-color: #d1e7dd;
-  border: 1px solid #badbcc;
-  padding: 0.75rem;
-  border-radius: 4px;
-  text-align: center;
+  color: #264b2e;
+  background: #e2f0df;
 }
 
 .errorMessage {
-  color: #a71d2a; /* Color rojo */
-  background-color: #f8d7da;
-  border: 1px solid #f5c6cb;
-  padding: 0.75rem;
-  border-radius: 4px;
-  text-align: center;
+  color: #7a241f;
+  background: #f8dedb;
 }

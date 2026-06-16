@@ -1,6 +1,7 @@
 import styles from "./MenuItemCard.module.css";
 
 function MenuItemCard({
+  category,
   name,
   description,
   price,
@@ -8,35 +9,24 @@ function MenuItemCard({
   children,
   isSelected,
 }) {
-  // Nota: `image` debe ser la ruta a tu imagen dentro de la carpeta `assets/images`
-  // o una URL completa si usas imágenes externas.
-
   return (
-    <div
-      className={`${styles.card} ${
-        isSelected ? styles.selected : ""
-      }`}
-    >
-      {/* Contenedor para la imagen */}
+    <article className={`${styles.card} ${isSelected ? styles.selected : ""}`}>
       <div className={styles.imageContainer}>
         <img src={image} alt={name} className={styles.image} />
       </div>
 
-      {/* Título del Producto */}
-      <h3 className={styles.title}>{name}</h3>
+      <div className={styles.content}>
+        <p className={styles.category}>{category}</p>
+        <h3 className={styles.title}>{name}</h3>
 
-      {/* Descripción y Precio */}
-      <div className={styles.details}>
-        <p className={styles.description}>{description}</p>
-        <p className={styles.price}>
-          <span className={styles.priceTag}>
-            ${price.toFixed(2)}
-          </span>
-        </p>
+        <div className={styles.details}>
+          <p className={styles.description}>{description}</p>
+          <p className={styles.price}>${price.toFixed(2)}</p>
+        </div>
       </div>
 
-      {children}
-    </div>
+      <div className={styles.action}>{children}</div>
+    </article>
   );
 }
 

@@ -1,90 +1,61 @@
-/* src/components/layout/Footer.module.css */
-
-/* -------------------------------------- */
-/* ESTILOS DEL CONTENEDOR PRINCIPAL */
-/* -------------------------------------- */
 .footer {
-  /* Usando el color café más oscuro y cálido de la imagen para el pie de página */
-  background-color: #5d4037;
-  color: #f7f3ed; /* Texto color crema/blanco suave */
-  padding: 2rem 1.5rem;
-  text-align: center;
-  font-size: 0.9rem;
+  color: var(--cream);
+  background: #2f211b;
+  padding: 2.5rem max(1.25rem, calc((100vw - 1180px) / 2));
 }
 
 .content {
-  max-width: 1200px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 2rem;
+  align-items: center;
 }
 
-/* -------------------------------------- */
-/* REDES SOCIALES */
-/* -------------------------------------- */
-.social {
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+.brand {
+  display: inline-flex;
+  color: var(--cream);
+  font-size: 1.35rem;
+  font-weight: 900;
+  margin-bottom: 0.35rem;
+  text-decoration: none;
 }
 
-.social a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.social a:hover {
-    color: #e0ac69; /* Color de acento más claro */
-}
-
-.icon {
-    font-size: 1.5rem;
-}
-
-/* -------------------------------------- */
-/* COPYRIGHT Y ENLACES SECUNDARIOS */
-/* -------------------------------------- */
+.content p,
 .copyright {
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
+  color: rgba(255, 250, 242, 0.74);
+}
+
+.links {
+  display: flex;
+  gap: 0.35rem;
 }
 
 .links a {
-    color: inherit;
-    text-decoration: none;
-    margin: 0 0.5rem;
-    padding-bottom: 0.1rem;
-    border-bottom: 1px solid transparent;
-    transition: border-bottom 0.3s;
+  border-radius: 8px;
+  color: rgba(255, 250, 242, 0.9);
+  font-weight: 800;
+  padding: 0.55rem 0.7rem;
+  text-decoration: none;
 }
 
 .links a:hover {
-    border-bottom: 1px solid #f7f3ed;
+  background: rgba(255, 250, 242, 0.1);
 }
 
-/* -------------------------------------- */
-/* RESPONSIVIDAD (El footer ya es bastante responsivo por defecto) */
-/* -------------------------------------- */
-@media (min-width: 768px) {
+.copyright {
+  border-top: 1px solid rgba(255, 250, 242, 0.12);
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+}
+
+@media (max-width: 760px) {
   .content {
-    /* En desktop, podemos usar flexbox para una distribución más estructurada */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .social {
-      margin-bottom: 0;
-      /* Mover las redes sociales a la izquierda */
-  }
-
-  .copyright {
-      /* Asegura que el copyright se centre visualmente */
-      margin: 0;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
   .links {
-      /* Mover los enlaces secundarios a la derecha */
+    flex-wrap: wrap;
   }
 }

@@ -1,27 +1,23 @@
-// src/components/ui/SocialLinks.jsx
-import React from 'react';
-import styles from './SocialLinks.module.css';
+import styles from "./SocialLinks.module.css";
 
-// Array de datos para las redes sociales
 const socialMedia = [
-  { name: 'Instagram', icon: '', url: 'https://instagram.com/cafeaura' },
-  { name: 'Facebook', icon: '', url: 'https://facebook.com/cafeaura' },
-  { name: 'Twitter', icon: '', url: 'https://twitter.com/cafeaura' },
+  { name: "Instagram", label: "IG", url: "https://instagram.com/cafecafe" },
+  { name: "Facebook", label: "FB", url: "https://facebook.com/cafecafe" },
+  { name: "X", label: "X", url: "https://twitter.com/cafecafe" },
 ];
 
-function SocialLinks({ className = '' }) {
-  // `className` se usa para aceptar estilos adicionales de los padres (como la ContactSection)
+function SocialLinks({ className = "" }) {
   return (
     <div className={`${styles.socialLinks} ${className}`}>
       {socialMedia.map((link) => (
         <a
           key={link.name}
           href={link.url}
-          target="_blank" // Abre el enlace en una nueva pestaña
-          rel="noopener noreferrer" // Mejora la seguridad
+          target="_blank"
+          rel="noopener noreferrer"
           aria-label={`Visita nuestro perfil en ${link.name}`}
         >
-          <span className={styles.icon}>{link.icon}</span>
+          {link.label}
         </a>
       ))}
     </div>

@@ -1,28 +1,17 @@
-/* src/components/Sections/MenuSection.module.css */
-
 .menuGrid {
   display: grid;
-  gap: 1.5rem;
-  padding: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
 }
 
-/* 📱 MÓVIL — 1 card */
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
+  .menuGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
   .menuGrid {
     grid-template-columns: 1fr;
-  }
-}
-
-/* 📟 TABLET — 2 cards */
-@media (min-width: 600px) and (max-width: 1024px) {
-  .menuGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* 🖥️ PC — 4 cards */
-@media (min-width: 1024px) {
-  .menuGrid {
-    grid-template-columns: repeat(4, 1fr);
   }
 }
